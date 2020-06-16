@@ -1,0 +1,16 @@
+#navbar {
+    width: 100%;
+    height:10%;
+    background-color: #FEFEFE;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#game_picks {
+    display: flex;
+    flex-flow: column;
+}
