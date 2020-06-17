@@ -1,12 +1,13 @@
-from flask import Flask, request, render_template
-# from flask_debugtoolbar import DebugToolbarExtension
+from flask import Flask
+from flask import request, render_template
 from stories import Story, story
-
+from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
-# app.debug = True
-# app.config['SECRET_KEY'] = "madlibkey"
-# debug = DebugToolbarExtension(app)
+app.config['SECRET_KEY'] = "oh-so-secret"
+app.debug = True
+debug = DebugToolbarExtension(app)
+
 
 @app.route('/')
 def home_():
@@ -16,9 +17,6 @@ def home_():
 def story_time():
     args = request.args
 
-    # stor = Story(["place","noun","verb","adjective","plural_noun"],   
-    #  f"""Once upon a time in a long-ago {place}, there lived a
-    #    large {adjective} {noun}. It loved to {verb} {plural_noun}.""")
     our_story = {
         "place" : args["place"],
         "noun" : args["noun"],
